@@ -14,14 +14,19 @@
     "declaration": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "paths": {
+      "@aplazo/shared-ui": ["./dist/shared-ui"],
+      "@aplazo/shared-ui/button": ["./dist/shared-ui/button"],
+      "@aplazo/shared-ui/dashboard": ["./dist/shared-ui/dashboard"],
+      "@aplazo/shared-ui/logo": ["./dist/shared-ui/logo"],
+      "@aplazo/shared-ui/sidenav": ["./dist/shared-ui/logo"]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
