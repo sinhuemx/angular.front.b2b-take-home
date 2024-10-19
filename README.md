@@ -96,4 +96,4 @@ El feature de login esta incompleto, se espera lo siguiente:
 
 ## Notas
 
-> El desarrollo de la prueba debe ser realizado en una branch con el nombre `feature/[primer nombre del candidato]_[primer apellido del candidato]` (si existen conflictos agregar el segundo apellido), por ejemplo: `feature/juan_perez` y hacer un `pull request` a la rama `main` del repositorio.
+> El desarrollo de la prueba debe ser realizado en una branch con el nombre `feature/[primer nombre del candidato]_[primer apellido del candidato]` (si existen conflictos agregar el segundo apellido), por ejemplo: `feature/juan_perez` y hacer un `pull request` a la rama `master` del repositorio.
