@@ -5,8 +5,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AplazoButtonComponent } from '@aplazo/shared-ui/button';
-import { AplazoLogoComponent } from '@aplazo/shared-ui/logo';
+import { AplazoButtonComponent } from '@apz/shared-ui/button';
+import { AplazoLogoComponent } from '@apz/shared-ui/logo';
 import { LoginUseCase } from '../../../application/login.usecase';
 
 @Component({

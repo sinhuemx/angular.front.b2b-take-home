@@ -12,7 +12,7 @@ import {
   AplazoElementColorDirective,
   AplazoElementDisabledDirective,
   AplazoElementPreventClickDirective,
-} from '@aplazo/shared-ui';
+} from '@apz/shared-ui';
 
 interface ButtonClassnamesConfig {
   base: string;
@@ -41,7 +41,7 @@ interface ButtonClassnamesConfig {
  * Import the component
  *
  * ```ts
- * import { AplazoButtonComponent } from '@aplazo/shared-ui/button';
+ * import { AplazoButtonComponent } from '@apz/shared-ui/button';
  * ```
  *
  * Declare in the imports

@@ -10,7 +10,7 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 
 export const LOGO_SIZE = ['sm', 'md', 'base', 'lg', 'xl'] as const;
-export type LogoSize = typeof LOGO_SIZE[number];
+export type LogoSize = (typeof LOGO_SIZE)[number];
 
 /** ## Usage
  *
@@ -18,7 +18,7 @@ export type LogoSize = typeof LOGO_SIZE[number];
  *
  * ```ts
  * // within the component that is using the logo
- * import { AplazoLogoComponent } from '@aplazo/shared-ui/logo';
+ * import { AplazoLogoComponent } from '@apz/shared-ui/logo';
  * ```
  *
  * ### Declare in the imports

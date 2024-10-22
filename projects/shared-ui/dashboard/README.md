@@ -1,4 +1,4 @@
-# @aplazo/shared-ui/dashboard
+# @apz/shared-ui/dashboard
 
 > [!Note]
 > All examples are based on standalone API, but the same approach can be used with the NgModule approach as described in the Angular documentation.
@@ -17,7 +17,7 @@ For instance we want to use the AplazoDashboardComponent within the LayoutCompon
 
 ```ts
 // layout.component.ts
-import { AplazoDashboardComponents } from '@aplazo/shared-ui/dashboard'; // note the "s" at the end of Components
+import { AplazoDashboardComponents } from '@apz/shared-ui/dashboard'; // note the "s" at the end of Components
 
 
 @Component({
@@ -43,9 +43,7 @@ export class LayoutComponent {
   <aplz-ui-dash-sidebar> Some cool stuff in the sidebar </aplz-ui-dash-sidebar>
 
   <!-- All the elements outside the header/sidebar wrappers are rendered as a part of the main section-->
-  <section class="w-full h-screen bg-dark-background">
-    Some cool stuff in the main
-  </section>
+  <section class="w-full h-screen bg-dark-background">Some cool stuff in the main</section>
 </aplz-ui-dashboard>
 ```
 

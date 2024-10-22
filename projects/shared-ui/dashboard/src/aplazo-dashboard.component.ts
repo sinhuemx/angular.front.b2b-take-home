@@ -21,9 +21,9 @@ import {
   AplazoClickOutsideDirective,
   AplazoMatchMediaService,
   MediaQueryScreen,
-} from '@aplazo/shared-ui';
-import { AplazoButtonComponent } from '@aplazo/shared-ui/button';
-import { AplazoLogoComponent } from '@aplazo/shared-ui/logo';
+} from '@apz/shared-ui';
+import { AplazoButtonComponent } from '@apz/shared-ui/button';
+import { AplazoLogoComponent } from '@apz/shared-ui/logo';
 import {
   BehaviorSubject,
   Subject,
@@ -48,7 +48,7 @@ import { AplazoDashboardSidebarComponent } from './aplazo-dashboard-sidebar.comp
  * ```ts
  * import {
  * AplazoDashboardComponents,
- * } from '@aplazo/shared-ui/dashboard';
+ * } from '@apz/shared-ui/dashboard';
  * ```
  *
  * Declare in the imports
