@@ -1,0 +1,49 @@
+{
+  "name": "@apz/shared-ui",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.3.0",
+    "@angular/core": "^17.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2022/apz-shared-ui.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/apz-shared-ui.mjs",
+      "esm": "./esm2022/apz-shared-ui.mjs",
+      "default": "./fesm2022/apz-shared-ui.mjs"
+    },
+    "./button": {
+      "types": "./button/index.d.ts",
+      "esm2022": "./esm2022/button/apz-shared-ui-button.mjs",
+      "esm": "./esm2022/button/apz-shared-ui-button.mjs",
+      "default": "./fesm2022/apz-shared-ui-button.mjs"
+    },
+    "./logo": {
+      "types": "./logo/index.d.ts",
+      "esm2022": "./esm2022/logo/apz-shared-ui-logo.mjs",
+      "esm": "./esm2022/logo/apz-shared-ui-logo.mjs",
+      "default": "./fesm2022/apz-shared-ui-logo.mjs"
+    },
+    "./dashboard": {
+      "types": "./dashboard/index.d.ts",
+      "esm2022": "./esm2022/dashboard/apz-shared-ui-dashboard.mjs",
+      "esm": "./esm2022/dashboard/apz-shared-ui-dashboard.mjs",
+      "default": "./fesm2022/apz-shared-ui-dashboard.mjs"
+    },
+    "./sidenav": {
+      "types": "./sidenav/index.d.ts",
+      "esm2022": "./esm2022/sidenav/apz-shared-ui-sidenav.mjs",
+      "esm": "./esm2022/sidenav/apz-shared-ui-sidenav.mjs",
+      "default": "./fesm2022/apz-shared-ui-sidenav.mjs"
+    }
+  }
+}

@@ -7,11 +7,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import {
-  AplazoCommonSizeDirective,
   AplazoElementAppearanceDirective,
   AplazoElementColorDirective,
   AplazoElementDisabledDirective,
   AplazoElementPreventClickDirective,
+  AplazoCommonSizeDirective
 } from '@apz/shared-ui';
 
 interface ButtonClassnamesConfig {
@@ -20,82 +20,40 @@ interface ButtonClassnamesConfig {
   rounded: string;
 }
 
-/** AplazoButtonComponent
- *
- * Inputs that are available for the component:
- *
- * aplzAppearance - The appearance of the button ('basic', 'stroked', 'solid')
- *
- * aplzColor - The color of the button ('light', 'dark', 'aplazo', 'accent', 'success', 'danger', 'warning', 'info')
- *
- * size - The size of the button ('', 'xs', 'sm', 'md', 'lg', 'xl', '2xl')
- *
- * disabled - Wheather the button is disabled or not
- *
- * fullWidth - Wheather the button should be full width or not
- *
- * rounded - Wheather the button should be rounded or not
- *
- * Usage
- *
- * Import the component
- *
- * ```ts
- * import { AplazoButtonComponent } from '@apz/shared-ui/button';
- * ```
- *
- * Declare in the imports
- *
- * ```ts
- * @Component({ imports: [ AplazoButtonComponent ], })
- * ```
- *
- * Use the component
- *
- * ```html
- *  <button
- *   aplzButton
- *   type="submit"
- *   aplzAppearance="solid"
- *   size="md"
- *   aplzColor="dark"
- *   [fullWidth]="true"
- *   [rounded]="true"
- *   [disabled]="true"
- * >
- *   Submit
- * </button>
- * ```
- *
- */
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'button[aplzButton], a[aplzButton]',
   standalone: true,
-  imports: [NgClass],
+  imports: [
+    NgClass,
+    AplazoElementAppearanceDirective,
+    AplazoElementColorDirective,
+    AplazoElementDisabledDirective,
+    AplazoElementPreventClickDirective,
+    AplazoCommonSizeDirective
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: ` <ng-content></ng-content> `,
   hostDirectives: [
     {
       directive: AplazoElementAppearanceDirective,
-      inputs: ['aplzAppearance'],
+      inputs: ['aplzAppearance']
     },
     {
       directive: AplazoElementColorDirective,
-      inputs: ['aplzColor'],
+      inputs: ['aplzColor']
     },
     {
       directive: AplazoElementDisabledDirective,
-      inputs: ['disabled'],
+      inputs: ['disabled']
     },
     {
-      directive: AplazoElementPreventClickDirective,
+      directive: AplazoElementPreventClickDirective
     },
     {
       directive: AplazoCommonSizeDirective,
-      inputs: ['size'],
-    },
+      inputs: ['size']
+    }
   ],
   styleUrls: ['./aplazo-button.component.css'],
 })
@@ -106,10 +64,6 @@ export class AplazoButtonComponent {
     rounded: '',
   };
 
-  /** Overrides the base Aplazo's button classnames
-   *
-   * @default null
-   */
   @HostBinding('class')
   @Input()
   set class(value: string | null) {
@@ -132,11 +86,6 @@ export class AplazoButtonComponent {
   }
   #class: string | null = null;
 
-  /** Wheather the button should be full width or not
-   *
-   * When the value is not present, the default value is `false`
-   * @default false
-   */
   @Input()
   set fullWidth(value: boolean | undefined) {
     if (value == null || value === false) {
@@ -147,11 +96,6 @@ export class AplazoButtonComponent {
     this.#buttonClassnames.fullWidth = 'btn-full-width';
   }
 
-  /** Wheather the button should be rounded or not
-   *
-   * When the value is not present, the default value is `false`
-   * @default false
-   */
   @Input()
   public set rounded(value: boolean | undefined) {
     if (value == null || value === false) {

@@ -5,6 +5,12 @@
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
   },
+  "scripts": {
+
+    "build:app": "ng build",
+    "build": "ng build",
+    "test": "ng test"
+  },
   "dependencies": {
     "tslib": "^2.3.0"
   },

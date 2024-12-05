@@ -25,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "dist/shared-ui/themes/aplazo-light.css",
+              "./projects/shared-ui/src/style/aplazo-light.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -158,5 +158,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

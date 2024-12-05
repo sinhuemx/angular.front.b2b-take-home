@@ -8,6 +8,7 @@
     "build:ui": "ng build shared-ui",
     "prebuild:app": "npm run build:ui",
     "build:app": "ng build",
+    "build": "ng build",
     "test": "ng test"
   },
   "private": true,

@@ -1,7 +1,7 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
@@ -9,6 +9,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
@@ -16,18 +17,20 @@
     "moduleResolution": "node",
     "strictPropertyInitialization": false,
     "paths": {
-      "@apz/shared-ui": ["./dist/shared-ui"],
-      "@apz/shared-ui/button": ["./dist/shared-ui/button"],
-      "@apz/shared-ui/logo": ["./dist/shared-ui/logo"],
-      "@apz/shared-ui/sidenav": ["./dist/shared-ui/logo"],
-      "@apz/shared-ui/dashboard": ["./dist/shared-ui/dashboard"]
+      "@apz/shared-ui": ["projects/shared-ui/src/public-api"],
+      "@apz/shared-ui/button": ["projects/shared-ui/button/src/public-api"],
+      "@apz/shared-ui/logo": ["projects/shared-ui/logo/src/public-api"],
+      "@apz/shared-ui/sidenav": ["projects/shared-ui/sidenav/src/public-api"],
+      "@apz/shared-ui/dashboard": ["projects/shared-ui/dashboard/src/public-api"],
+      "@apz/shared-ui/directives": ["projects/shared-ui/src/lib/directives"],
+      "@apz/shared-ui/directives/*": ["projects/shared-ui/src/lib/directives/*"]
     },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": ["ES2022", "dom"]
-  },
+    "lib": ["ES2022", "dom"],
+     },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

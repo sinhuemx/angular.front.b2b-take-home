@@ -22,8 +22,7 @@ import {
   AplazoMatchMediaService,
   MediaQueryScreen,
 } from '@apz/shared-ui';
-import { AplazoButtonComponent } from '@apz/shared-ui/button';
-import { AplazoLogoComponent } from '@apz/shared-ui/logo';
+
 import {
   BehaviorSubject,
   Subject,
@@ -36,51 +35,9 @@ import {
 import { AplazoDashboardBannerDirective } from './aplazo-dashboard-banner.directive';
 import { AplazoDashboardHeaderComponent } from './aplazo-dashboard-header.component';
 import { AplazoDashboardSidebarComponent } from './aplazo-dashboard-sidebar.component';
+import { AplazoButtonComponent } from 'dist/shared-ui/button';
+import { AplazoLogoComponent } from 'projects/shared-ui/logo/src';
 
-/** Aplazo Dashboard Layout Component
- *
- * This component is only the skeleton of the dashboard,
- * with the aim to ease the creation of new dashboards.
- *
- * @example
- * Import required components
- *
- * ```ts
- * import {
- * AplazoDashboardComponents,
- * } from '@apz/shared-ui/dashboard';
- * ```
- *
- * Declare in the imports
- * ```ts
- * {
- * standalone: true,
- * imports: [
- * AplazoDashboardComponents,
- * ],
- * }
- * ```
- *
- * Use the components
- * ```html
- *  <aplz-ui-dashboard>
- *    <aplz-ui-dash-header>
- *      Some cool stuff in the header
- *    </aplz-ui-dash-header>
- *
- *    <aplz-ui-dash-sidebar>
- *      Some cool stuff in the sidebar
- *    </aplz-ui-dash-sidebar>
- *
- *    <section class="w-full h-screen bg-dark-background">
- *      Some cool stuff in the main
- *    </section>
- *  </aplz-ui-dashboard>
- * ```
- *
- * backdrop implementation inspired by
- * https://www.bennadel.com/blog/3737-rendering-a-templateref-as-a-child-of-the-body-element-in-angular-9-0-0-rc-5.htm
- */
 @Component({
   selector: 'aplz-ui-dashboard',
   standalone: true,
@@ -156,19 +113,7 @@ export class AplazoDashboardComponent
     map((flag) => ({ hasContent: flag }))
   );
 
-  /** Event that is emitted when the logo is clicked
-   *
-   * @default noop
-   *
-   * @example
-   *
-   * ```html
-   * <aplz-ui-dashboard (logoClick)="doSomeWithLogoClick()">
-   * ...
-   * </aplz-ui-dashboard>
-   * ```
-   *
-   */
+
   @Output()
   logoClick = new EventEmitter<void>();
 

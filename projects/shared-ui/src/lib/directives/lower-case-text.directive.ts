@@ -17,8 +17,31 @@ export class AplazoLowercaseDirective {
   });
 
   sanitizeValue(event: InputEvent): void {
-    // TODO: sanitize the value to lowercase
-    // TODO: propagate the value to the NgControl
-    // TODO: preserve the cursor position
+    const input = this.#elementRef.nativeElement;
+    const start = input.selectionStart;
+    const end = input.selectionEnd;
+
+    // Convertir a minúsculas
+    const newValue = input.value.toLowerCase();
+
+    // Solo actualizar si el valor ha cambiado
+    if (newValue !== input.value) {
+      // Actualizar valor en el input
+      input.value = newValue;
+
+      // Restaurar posición del cursor
+      input.setSelectionRange(start, end);
+
+      // Propagar el cambio al control del formulario
+      if (this.#ngControl?.control) {
+        this.#ngControl.control.setValue(newValue, {
+          emitEvent: false,
+          emitModelToViewChange: false,
+        });
+
+        // Disparar evento de input para asegurar la sincronización
+        input.dispatchEvent(new Event('input'));
+      }
+    }
   }
 }

@@ -1,0 +1,99 @@
+<div class="p-6">
+  <div class="mb-8 bg-white rounded-lg shadow">
+    <!-- Filtros Header -->
+    <div class="p-4 flex justify-between items-center cursor-pointer border-b" (click)="toggleFilters()">
+      <div class="flex items-center gap-2">
+        <h3 class="text-lg font-medium">Filtros</h3>
+        <span *ngIf="hasActiveFilters()" class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+          Filtros activos
+        </span>
+      </div>
+      <svg [class.rotate-180]="!isFiltersVisible"
+           class="w-5 h-5 transition-transform duration-200"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 20 20"
+           fill="currentColor">
+        <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd" />
+      </svg>
+    </div>
+
+    <!-- Filtros Content -->
+    <div class="transition-all duration-200 ease-in-out overflow-hidden"
+         [class.max-h-0]="!isFiltersVisible"
+         [class.max-h-[500px]]="isFiltersVisible">
+      <div class="p-4">
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Sucursales -->
+          <div>
+            <h4 class="mb-2">Sucursales</h4>
+            <div class="flex flex-wrap gap-2">
+              <button *ngFor="let branch of availableBranches"
+                      [class]="getBranchButtonClass(branch)"
+                      (click)="toggleBranch(branch)">
+                Branch {{ branch }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Fechas -->
+          <div class="flex gap-4">
+            <div>
+              <label for="startDate" class="block mb-2">Fecha Inicio</label>
+              <input type="date"
+                     id="startDate"
+                     [formControl]="startDateControl"
+                     class="border rounded px-3 py-2">
+            </div>
+
+            <div>
+              <label for="endDate" class="block mb-2">Fecha Fin</label>
+              <input type="date"
+                     id="endDate"
+                     [formControl]="endDateControl"
+                     class="border rounded px-3 py-2">
+            </div>
+          </div>
+        </div>
+
+        <!-- Reset button -->
+        <div class="mt-4 flex justify-end">
+          <button (click)="resetFilters()"
+                  class="flex items-center gap-2 text-blue-600 hover:text-blue-800">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="h-4 w-4"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke="currentColor">
+              <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Resetear filtros
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen -->
+  <h2 class="text-2xl font-medium mb-6">RESUMEN DE PEDIDOS</h2>
+  <div class="grid grid-cols-3 gap-6">
+    <div class="bg-[#2D2D2D] rounded-lg p-6 text-white">
+      <h3 class="font-medium uppercase text-sm mb-2">Total de ventas</h3>
+      <p class="text-2xl">${{ totalSales | number:'.2' }}</p>
+    </div>
+
+    <div class="bg-[#2D2D2D] rounded-lg p-6 text-white">
+      <h3 class="font-medium uppercase text-sm mb-2">Número de pedidos</h3>
+      <p class="text-2xl">{{ totalOrders }}</p>
+    </div>
+
+    <div class="bg-[#2D2D2D] rounded-lg p-6 text-white">
+      <h3 class="font-medium uppercase text-sm mb-2">Ticket promedio</h3>
+      <p class="text-2xl">${{ averageTicket | number:'.2' }}</p>
+    </div>
+  </div>
+</div>

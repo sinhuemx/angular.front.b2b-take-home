@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { ROUTE_CONFIG } from './core/infra/config/routes.config';
+import { authGuard, publicGuard } from './core/guards/auth.guard';
 import { HistorialComponent } from './features/historial/infra/components/historial.component';
 import { HomeComponent } from './features/home/infra/home.component';
 import { LayoutComponent } from './features/layout/layout.component';
@@ -16,10 +17,12 @@ export const routes: Routes = [
     path: ROUTE_CONFIG.login,
     component: LoginComponent,
     providers: [provideLogin()],
+    canActivate: [publicGuard]
   },
   {
     path: ROUTE_CONFIG.app,
     component: LayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',
